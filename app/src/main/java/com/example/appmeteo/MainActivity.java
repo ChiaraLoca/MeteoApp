@@ -16,6 +16,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.appmeteo.fragments.placesList.PlacesListFragment;
+
 import io.nlopez.smartlocation.OnLocationUpdatedListener;
 import io.nlopez.smartlocation.SmartLocation;
 import io.nlopez.smartlocation.location.config.LocationAccuracy;
@@ -27,10 +29,7 @@ public class MainActivity extends SingleFragmentActivity {
 
     @Override
     protected Fragment createFragment() {
-        Log.i("deb","Creando LF");
-        ListFragment fragment = new ListFragment();
-        Log.i("deb","Creato LF");
-        return fragment;
+        return new PlacesListFragment();
     }
 
     /*@Override
