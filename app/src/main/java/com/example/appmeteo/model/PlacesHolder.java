@@ -1,6 +1,7 @@
 package com.example.appmeteo.model;
 
 import android.content.Context;
+import android.location.Location;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,8 @@ public class PlacesHolder {
     }
     private PlacesHolder(Context context) {
         this.places = new ArrayList<>();
+        places.add(new Place(UUID.randomUUID(), null, "Delebio"));
+        places.add(new Place(UUID.randomUUID(), null, "Lissone"));
     }
 
     public Place getPlaceByUUID(UUID uuid){

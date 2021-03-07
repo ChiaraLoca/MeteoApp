@@ -3,6 +3,8 @@ package com.example.appmeteo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
 
 import android.Manifest;
 import android.content.Context;
@@ -19,14 +21,22 @@ import io.nlopez.smartlocation.SmartLocation;
 import io.nlopez.smartlocation.location.config.LocationAccuracy;
 import io.nlopez.smartlocation.location.config.LocationParams;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends SingleFragmentActivity {
 
-    private Button searchButton;
+    //private Button searchButton;
 
     @Override
+    protected Fragment createFragment() {
+        Log.i("deb","Creando LF");
+        ListFragment fragment = new ListFragment();
+        Log.i("deb","Creato LF");
+        return fragment;
+    }
+
+    /*@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        /*setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
         searchButton = findViewById(R.id.Search);
@@ -95,5 +105,5 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent intent = SearchActivity.newIntent(MainActivity.this);
         startActivityForResult(intent,2);
-    }
+    }*/
 }

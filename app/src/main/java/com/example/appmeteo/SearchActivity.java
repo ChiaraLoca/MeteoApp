@@ -29,8 +29,8 @@ public class SearchActivity extends AppCompatActivity {
 
     public void startMainActivity()
     {
-        Intent intent = MainActivity.newIntent(SearchActivity.this);
-        startActivityForResult(intent,1);
+        //Intent intent = MainActivity.newIntent(SearchActivity.this);
+        //startActivityForResult(intent,1);
     }
 
 
