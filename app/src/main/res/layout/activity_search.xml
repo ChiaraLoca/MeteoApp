@@ -7,7 +7,7 @@
     tools:context=".SearchActivity">
 
     <Button
-        android:id="@+id/goBack"
+        android:id="@+id/id_goBackB"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="5dp"
@@ -26,7 +26,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/goBack"
+        app:layout_constraintStart_toEndOf="@+id/id_goBackB"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

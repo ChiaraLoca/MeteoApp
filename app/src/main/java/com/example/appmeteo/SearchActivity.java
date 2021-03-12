@@ -18,7 +18,7 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         getSupportActionBar().hide();
 
-        goBackButton = findViewById(R.id.goBack);
+        goBackButton = findViewById(R.id.id_goBackB);
         goBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,14 +29,13 @@ public class SearchActivity extends AppCompatActivity {
 
     public void startMainActivity()
     {
-        //Intent intent = MainActivity.newIntent(SearchActivity.this);
-        //startActivityForResult(intent,1);
+        Intent intent = MainActivity.newIntent(SearchActivity.this);
+        startActivityForResult(intent,1);
     }
 
 
     public static Intent newIntent(Context packageContext) {
         Intent intent = new Intent(packageContext, SearchActivity.class);
-        //intent.putExtra(EXTRA_KEY, extraParam);
         return intent;
     }
 

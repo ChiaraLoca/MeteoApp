@@ -23,7 +23,7 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceHolder> {
     @Override
     public PlaceHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(activity);
-        return new PlaceHolder(layoutInflater, parent);
+        return new PlaceHolder(layoutInflater, parent,activity);
     }
 
     @Override

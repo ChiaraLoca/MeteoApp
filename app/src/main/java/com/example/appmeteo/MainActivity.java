@@ -105,4 +105,9 @@ public class MainActivity extends SingleFragmentActivity {
         Intent intent = SearchActivity.newIntent(MainActivity.this);
         startActivityForResult(intent,2);
     }*/
+
+    public static Intent newIntent(Context packageContext) {
+        Intent intent = new Intent(packageContext, MainActivity.class);
+        return intent;
+    }
 }
