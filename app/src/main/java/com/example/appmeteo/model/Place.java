@@ -2,6 +2,9 @@ package com.example.appmeteo.model;
 
 import android.location.Location;
 
+import com.example.appmeteo.controller.MeteoController;
+import com.example.appmeteo.model.meteo.Meteo;
+
 import java.util.UUID;
 
 public class Place {
@@ -12,7 +15,8 @@ public class Place {
     }
 
     private Location location;
-    private final String name;
+    private Meteo meteo;
+    private String name;
 
     public UUID getUuid() {
         return uuid;
@@ -26,9 +30,27 @@ public class Place {
         return name;
     }
 
-    public Place(UUID uuid, Location location, String name) {
+    public Meteo getMeteo() {
+        return meteo;
+    }
+
+    public void setMeteo(Meteo meteo) {
+        this.meteo = meteo;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Place(UUID uuid, Location location, String name, Meteo meteo) {
         this.uuid = uuid;
         this.location = location;
         this.name = name;
+        this.meteo = meteo;
+    }
+
+
+    public void updateMeteo(String s) {
+        this.meteo= MeteoController.getInstance().jsonToMeteo(s);
     }
 }

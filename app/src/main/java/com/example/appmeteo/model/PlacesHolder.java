@@ -22,11 +22,11 @@ public class PlacesHolder {
     }
     private PlacesHolder(Context context) {
         this.places = new ArrayList<>();
-        places.add(new Place(UUID.randomUUID(), null, "QUI"));
+        places.add(new Place(UUID.randomUUID(), null, "QUI", null));
     }
 
     public Place addPlace(String name, Location location){
-        Place p=new Place(UUID.randomUUID(), location, name);
+        Place p=new Place(UUID.randomUUID(), location, name, null);
         places.add(p);
         return p;
     }
