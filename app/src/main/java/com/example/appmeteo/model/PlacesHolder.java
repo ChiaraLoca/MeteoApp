@@ -22,8 +22,7 @@ public class PlacesHolder {
     }
     private PlacesHolder(Context context) {
         this.places = new ArrayList<>();
-        places.add(new Place(UUID.randomUUID(), null, "Delebio"));
-        places.add(new Place(UUID.randomUUID(), null, "Lissone"));
+        places.add(new Place(UUID.randomUUID(), null, "QUI"));
     }
 
     public Place addPlace(String name, Location location){

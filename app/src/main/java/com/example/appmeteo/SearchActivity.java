@@ -14,15 +14,19 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.appmeteo.controller.MeteoController;
 import com.example.appmeteo.model.PlacesHolder;
 
 public class SearchActivity extends AppCompatActivity {
 
     private Button goBackButton;
     private TextView searchText;
+    private MeteoController meteoController;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        meteoController=MeteoController.getInstance();
         setContentView(R.layout.activity_search);
         getSupportActionBar().hide();
         searchText=findViewById(R.id.searchText);
@@ -35,7 +39,8 @@ public class SearchActivity extends AppCompatActivity {
         });
         searchText.setOnEditorActionListener((v, actionId, event) -> {
             if(actionId==EditorInfo.IME_ACTION_DONE){
-                requestLocation(searchText.getText());
+                meteoController.requestPlace(searchText.getText(), getApplicationContext());
+                //TODO posto non trovato
                 InputMethodManager imm = (InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
                 Toast toast=Toast.makeText(getApplicationContext(), searchText.getText()+" aggiunto con successo", Toast.LENGTH_LONG);
@@ -48,9 +53,6 @@ public class SearchActivity extends AppCompatActivity {
         });
     }
 
-    private void requestLocation(CharSequence text) {
-        PlacesHolder.get(getApplicationContext()).addPlace(text.toString(), null);
-    }
 
     public void startMainActivity()
     {

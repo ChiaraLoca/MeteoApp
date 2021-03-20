@@ -6,7 +6,12 @@ import java.util.UUID;
 
 public class Place {
     private final UUID uuid;
-    private final Location location;
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    private Location location;
     private final String name;
 
     public UUID getUuid() {
