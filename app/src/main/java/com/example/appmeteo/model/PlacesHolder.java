@@ -26,6 +26,12 @@ public class PlacesHolder {
         places.add(new Place(UUID.randomUUID(), null, "Lissone"));
     }
 
+    public Place addPlace(String name, Location location){
+        Place p=new Place(UUID.randomUUID(), location, name);
+        places.add(p);
+        return p;
+    }
+
     public Place getPlaceByUUID(UUID uuid){
         for (Place p: places) {
             if(p.getUuid().equals(uuid))
