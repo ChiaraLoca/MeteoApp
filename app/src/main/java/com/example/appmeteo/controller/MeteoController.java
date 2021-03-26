@@ -5,15 +5,12 @@ import android.content.Context;
 import com.example.appmeteo.model.Place;
 import com.example.appmeteo.model.PlacesHolder;
 import com.example.appmeteo.model.meteo.Meteo;
-import com.github.cliftonlabs.json_simple.JsonException;
-import com.github.cliftonlabs.json_simple.JsonObject;
-import com.github.cliftonlabs.json_simple.Jsoner;
-import com.github.dozermapper.core.DozerBeanMapperBuilder;
-import com.github.dozermapper.core.Mapper;
+import com.squareup.moshi.JsonAdapter;
+import com.squareup.moshi.Moshi;
 
-import java.io.BufferedReader;
+
 import java.io.IOException;
-import java.io.StringReader;
+
 
 public class MeteoController {
 
@@ -32,15 +29,16 @@ public class MeteoController {
     }
     public Meteo jsonToMeteo(String s){
         Meteo meteo=null;
+
+        Moshi moshi= new Moshi.Builder().build();
+        JsonAdapter<Meteo> jsonAdapter= moshi.adapter(Meteo.class);
         try {
-            BufferedReader bufferedReader= new BufferedReader(new StringReader(s));
-            JsonObject jsonObject= (JsonObject) Jsoner.deserialize(bufferedReader);
-            Mapper mapper= DozerBeanMapperBuilder.buildDefault();
-            meteo= mapper.map(jsonObject, Meteo.class);
-            bufferedReader.close();
-        } catch (JsonException | IOException e) {
+            meteo = jsonAdapter.fromJson(s);
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
+
         return meteo;
     }
 }

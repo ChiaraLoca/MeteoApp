@@ -1,12 +1,11 @@
 package com.example.appmeteo.model.meteo;
 
-import com.github.cliftonlabs.json_simple.JsonObject;
-import com.github.cliftonlabs.json_simple.Jsonable;
+
 
 import java.io.IOException;
 import java.io.Writer;
 
-public class Weather implements Jsonable {
+public class Weather {
     private long id;
     private String main;
     private String description;
@@ -64,26 +63,5 @@ public class Weather implements Jsonable {
         this.icon = icon;
     }
 
-    @Override
-    public String toJson() {
-        JsonObject jsonObject = new JsonObject();
 
-        jsonObject.put("id", this.id);
-        jsonObject.put("main", this.main);
-        jsonObject.put("description", this.description);
-        jsonObject.put("icon", this.icon);
-
-
-
-        return jsonObject.toJson();
-    }
-
-    @Override
-    public void toJson(Writer writable) throws IOException {
-        try {
-            writable.write(this.toJson());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

@@ -1,12 +1,11 @@
 package com.example.appmeteo.model.meteo;
 
-import com.github.cliftonlabs.json_simple.JsonObject;
-import com.github.cliftonlabs.json_simple.Jsonable;
+
 
 import java.io.IOException;
 import java.io.Writer;
 
-public class Clouds implements Jsonable {
+public class Clouds {
     private double all;
 
     @Override
@@ -31,23 +30,5 @@ public class Clouds implements Jsonable {
         this.all = all;
     }
 
-    @Override
-    public String toJson() {
-        JsonObject jsonObject = new JsonObject();
 
-        jsonObject.put("all", this.all);
-
-
-
-        return jsonObject.toJson();
-    }
-
-    @Override
-    public void toJson(Writer writable) throws IOException {
-        try {
-            writable.write(this.toJson());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

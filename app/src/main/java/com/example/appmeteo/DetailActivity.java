@@ -97,6 +97,7 @@ public class DetailActivity extends AppCompatActivity {
         intent.putExtra(PLACE_UUID, uuid);
         return intent;
     }
+    String test1= "{\"coord\": { \"lon\": 139,\"lat\": 35}}";
     String testString= "{\"coord\": { \"lon\": 139,\"lat\": 35},\n" +
             "     \"weather\": [\n" +
             "       {\n" +

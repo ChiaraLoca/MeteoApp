@@ -1,12 +1,11 @@
 package com.example.appmeteo.model.meteo;
 
-import com.github.cliftonlabs.json_simple.JsonObject;
-import com.github.cliftonlabs.json_simple.Jsonable;
+
 
 import java.io.IOException;
 import java.io.Writer;
 
-public class Coord implements Jsonable {
+public class Coord {
     private double lon;
     private double lat;
 
@@ -42,23 +41,5 @@ public class Coord implements Jsonable {
                 '}';
     }
 
-    @Override
-    public String toJson() {
-        JsonObject jsonObject = new JsonObject();
 
-        jsonObject.put("lon", this.lon);
-        jsonObject.put("lat", this.lat);
-
-
-        return jsonObject.toJson();
-    }
-
-    @Override
-    public void toJson(Writer writable) throws IOException {
-        try {
-            writable.write(this.toJson());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
