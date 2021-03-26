@@ -5,6 +5,7 @@ import android.location.Location;
 import com.example.appmeteo.controller.MeteoController;
 import com.example.appmeteo.model.meteo.Meteo;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class Place {
@@ -49,6 +50,24 @@ public class Place {
         this.meteo = meteo;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Place place = (Place) o;
+        return uuid.equals(place.uuid) &&
+                name.equals(place.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(uuid, name);
+    }
+
+    public Place(UUID uuid, String name) {
+        this.uuid = uuid;
+        this.name = name;
+    }
 
     public void updateMeteo(String s) {
         this.meteo= MeteoController.getInstance().jsonToMeteo(s);
