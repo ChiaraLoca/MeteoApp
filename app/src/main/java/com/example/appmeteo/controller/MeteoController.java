@@ -1,9 +1,14 @@
 package com.example.appmeteo.controller;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.widget.ImageView;
 
 import com.example.appmeteo.model.Place;
 import com.example.appmeteo.model.PlacesHolder;
+
 import com.example.appmeteo.model.meteo.Meteo;
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
@@ -23,10 +28,33 @@ public class MeteoController {
     private MeteoController(){
 
     }
-    public Place requestPlace(CharSequence text, Context context){
-        //TODO usare API del sito
-        return PlacesHolder.get(context).addPlace(text.toString(), null);
+
+
+    public Place requestMeteoByPlace(CharSequence text, Context context){
+
+        Meteo meteo = jsonToMeteo(ConnectionController.getConnectionController().getWeatherByCityName(text.toString()));
+
+        return PlacesHolder.get(context).addPlace(text.toString(), null,meteo);
     }
+
+    public Place requestMeteoByCoordinates(double lat,double lon, Context context){
+
+
+        Meteo meteo = jsonToMeteo(ConnectionController.getConnectionController().getWeatherByCoordinates(lat,lon));
+        PlacesHolder.get(context).getPlaces().get(0).setMeteo(meteo);
+        PlacesHolder.get(context).getPlaces().get(0).setName(meteo.getName());
+
+        return null;
+    }
+
+
+    public Bitmap requestImage(String imageId){
+
+        //TODO usare API del sito
+        return BitmapFactory.decodeStream(ConnectionController.getConnectionController().getImageById(imageId));
+    }
+
+
     public Meteo jsonToMeteo(String s){
         Meteo meteo=null;
 
@@ -41,4 +69,9 @@ public class MeteoController {
 
         return meteo;
     }
+
+
 }
+/*
+
+ */

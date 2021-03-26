@@ -52,8 +52,13 @@ public class DetailActivity extends AppCompatActivity {
 
         UUID uuid= (UUID) getIntent().getSerializableExtra(PLACE_UUID);
         Place place= PlacesHolder.get(getApplicationContext()).getPlaceByUUID(uuid);
-        //TODO qui mettiamo la chiamata alla API
-        place.updateMeteo(testString);
+
+        if(place.equals(PlacesHolder.get(getApplicationContext()).getPlaces().get(0)))
+            MeteoController.getInstance().requestMeteoByCoordinates(place.getLocation().getLatitude(),place.getLocation().getLongitude(),getApplicationContext());
+
+
+
+
         id.setText(uuid.toString());
         Meteo meteo= place.getMeteo();
         if(meteo!=null){

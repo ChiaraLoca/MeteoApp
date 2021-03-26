@@ -17,6 +17,10 @@ import android.widget.Toast;
 import com.example.appmeteo.controller.MeteoController;
 import com.example.appmeteo.model.PlacesHolder;
 
+import java.lang.reflect.Executable;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 public class SearchActivity extends AppCompatActivity {
 
     private Button goBackButton;
@@ -39,7 +43,11 @@ public class SearchActivity extends AppCompatActivity {
         });
         searchText.setOnEditorActionListener((v, actionId, event) -> {
             if(actionId==EditorInfo.IME_ACTION_DONE){
-                meteoController.requestPlace(searchText.getText(), getApplicationContext());
+
+
+                meteoController.requestMeteoByPlace(searchText.getText(), getApplicationContext());
+
+
                 //TODO posto non trovato
                 InputMethodManager imm = (InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(v.getWindowToken(), 0);

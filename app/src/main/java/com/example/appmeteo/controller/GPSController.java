@@ -42,6 +42,7 @@ public class GPSController {
                     public void onLocationUpdated(Location location) {
                         Log.i("GPS", "location" + location);
                         PlacesHolder.get(context).getPlaces().get(0).setLocation(location);
+
                     }
                 });
     }

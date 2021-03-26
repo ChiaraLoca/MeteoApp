@@ -1,5 +1,6 @@
 package com.example.appmeteo;
 
+import com.example.appmeteo.controller.ConnectionController;
 import com.example.appmeteo.controller.MeteoController;
 import com.example.appmeteo.model.meteo.Meteo;
 
@@ -57,5 +58,14 @@ public class ExampleUnitTest {
         MeteoController meteoController= MeteoController.getInstance();
         Meteo meteo=meteoController.jsonToMeteo(s);
         System.out.println(meteo);
+    }
+
+    @Test
+    public void connectionTest()
+    {
+        ConnectionController connectionController = ConnectionController.getConnectionController();
+
+        System.out.println(connectionController.getWeatherByCityName("Delebio"));
+
     }
 }
