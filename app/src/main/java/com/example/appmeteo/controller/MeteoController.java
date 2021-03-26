@@ -25,7 +25,7 @@ public class MeteoController {
     }
     public Place requestPlace(CharSequence text, Context context){
         //TODO usare API del sito
-        return PlacesHolder.get(context).addPlace(text.toString(), null);
+        return PlacesHolder.get(context).addPlace(text.toString());
     }
     public Meteo jsonToMeteo(String s){
         Meteo meteo=null;

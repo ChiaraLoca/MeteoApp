@@ -33,9 +33,10 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         Place p= new Place(UUID.randomUUID(), "test");
         DbWrapper dbWrapper= new DbWrapper(appContext);
-        assertTrue(dbWrapper.loadData().isEmpty());
+        long before= dbWrapper.loadData().size();
+        //assertTrue(dbWrapper.loadData().isEmpty());
         assertTrue(dbWrapper.insert(p)>=0);
-        assertEquals(1, dbWrapper.loadData().size());
-        assertEquals(p, dbWrapper.loadData().get(0));
+        assertEquals(before+1, dbWrapper.loadData().size());
+        assertEquals(p, dbWrapper.loadData().get(dbWrapper.loadData().size()-1));
     }
 }
