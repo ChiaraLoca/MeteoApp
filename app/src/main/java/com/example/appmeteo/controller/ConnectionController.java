@@ -30,12 +30,6 @@ public class ConnectionController {
     {
         return send(weatherUrl.getUrlByCityNames(cityName));
     }
-    /*public String getImageById(String imageId)
-    {
-
-        return send(weatherUrl.getUrlImageById(imageId));
-
-    }*/
 
 
     private String send(String urlstr)
@@ -50,27 +44,7 @@ public class ConnectionController {
         }
         return str;
 
-        /*StringBuilder stringBuilder = new StringBuilder();
-        HttpURLConnection connection=null;
-        try {
-            URL url = new URL(urlstr);
-             connection = (HttpURLConnection)url.openConnection();
-            InputStream in = connection.getInputStream(); // apro la connessione
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
 
-            if(connection.getResponseCode() != HttpURLConnection.HTTP_OK)
-                return null;
-            String line;
-            while((line =bufferedReader.readLine())!=null)
-            {
-                stringBuilder.append(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally{
-            connection.disconnect();
-        }
-        return stringBuilder.toString();*/
     }
 
 

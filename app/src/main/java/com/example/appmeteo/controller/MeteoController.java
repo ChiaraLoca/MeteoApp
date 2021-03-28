@@ -32,36 +32,18 @@ public class MeteoController {
 
     public Place requestMeteoByPlace(CharSequence text, Context context){
 
-
         Meteo meteo = jsonToMeteo(ConnectionController.getConnectionController().getWeatherByCityName(text.toString()));
-        //Bitmap bitmap = requestImage(meteo.getWeather()[0].getIcon());
-        //return PlacesHolder.get(context).addPlace(text.toString(), null,meteo,bitmap);
-        return PlacesHolder.get(context).addPlace(text.toString(), null,meteo,null);
+        return PlacesHolder.get(context).addPlace(text.toString(), null,meteo);
 
     }
 
     public Place requestMeteoByCoordinates(double lat,double lon, Context context){
 
-
         Meteo meteo = jsonToMeteo(ConnectionController.getConnectionController().getWeatherByCoordinates(lat,lon));
-        //Bitmap bitmap = requestImage(meteo.getWeather()[0].getIcon());
         PlacesHolder.get(context).getPlaces().get(0).setMeteo(meteo);
         PlacesHolder.get(context).getPlaces().get(0).setName(meteo.getName());
-        //PlacesHolder.get(context).getPlaces().get(0).setBitmap(bitmap);
-
         return null;
     }
-
-
-    /*public Bitmap requestImage(String imageId){
-
-        String  str = ConnectionController.getConnectionController().getImageById(imageId);
-
-        //return BitmapFactory.decodeStream();
-        return null;
-    }*/
-
-
     public Meteo jsonToMeteo(String s){
         Meteo meteo=null;
 
@@ -79,6 +61,3 @@ public class MeteoController {
 
 
 }
-/*
-
- */

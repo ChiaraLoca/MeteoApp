@@ -71,17 +71,12 @@ public class DetailActivity extends AppCompatActivity {
             minima.setText(tmp);
             tmp=""+(int)(meteo.getMain().getTemp()-273.15)+"°";
             attuale.setText(tmp);
-
             ImageController.getInstance().setImage(image,place.getMeteo().getWeather()[0].getIcon());
 
-
-           // Log.i("--->",""+place.getBitmap());
-            //TODO link img
         } else {
             nome.setText(place.getName());
             coordinate.setText("ND");
         }
-        //TODO legare coordinate
 
 
 

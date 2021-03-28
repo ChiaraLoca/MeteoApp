@@ -31,11 +31,4 @@ public class ExampleInstrumentedTest {
         assertEquals("com.example.appmeteo", appContext.getPackageName());
     }
 
-    @Test
-    public void imageTest(){
-
-
-
-        Bitmap bitmap = MeteoController.getInstance().requestImage("01d");
-    }
 }
