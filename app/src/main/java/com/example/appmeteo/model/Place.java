@@ -1,5 +1,6 @@
 package com.example.appmeteo.model;
 
+import android.graphics.Bitmap;
 import android.location.Location;
 
 import com.example.appmeteo.controller.MeteoController;
@@ -17,6 +18,15 @@ public class Place {
     private Location location;
     private Meteo meteo;
     private String name;
+    private Bitmap bitmap;
+
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
+    }
 
     public UUID getUuid() {
         return uuid;
@@ -42,11 +52,12 @@ public class Place {
         this.name = name;
     }
 
-    public Place(UUID uuid, Location location, String name, Meteo meteo) {
+    public Place(UUID uuid, Location location, String name, Meteo meteo,Bitmap bitmap) {
         this.uuid = uuid;
         this.location = location;
         this.name = name;
         this.meteo = meteo;
+        this.bitmap = bitmap;
     }
 
 

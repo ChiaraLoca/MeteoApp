@@ -1,10 +1,14 @@
 package com.example.appmeteo;
 
+import android.graphics.Bitmap;
+
 import com.example.appmeteo.controller.ConnectionController;
 import com.example.appmeteo.controller.MeteoController;
 import com.example.appmeteo.model.meteo.Meteo;
 
 import org.junit.Test;
+
+import java.io.InputStream;
 
 import static org.junit.Assert.*;
 
@@ -68,4 +72,6 @@ public class ExampleUnitTest {
         System.out.println(connectionController.getWeatherByCityName("Delebio"));
 
     }
+
+
 }

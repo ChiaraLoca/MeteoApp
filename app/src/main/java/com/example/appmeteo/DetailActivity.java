@@ -2,9 +2,7 @@ package com.example.appmeteo;
 
 import android.content.Context;
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.appmeteo.controller.ImageController;
 import com.example.appmeteo.controller.MeteoController;
 import com.example.appmeteo.model.Place;
 import com.example.appmeteo.model.PlacesHolder;
@@ -66,12 +65,17 @@ public class DetailActivity extends AppCompatActivity {
             String coordinateString= ""+meteo.getCoord().getLat() + " "+meteo.getCoord().getLon() ;
             coordinate.setText(coordinateString);
             meteoView.setText(meteo.getWeather()[0].getMain());
-            String tmp=""+meteo.getMain().getTemp_max();
+            String tmp=""+(int)(meteo.getMain().getTemp_max()-273.15)+"°";
             max.setText(tmp);
-            tmp=""+meteo.getMain().getTemp_min();
+            tmp=""+(int)(meteo.getMain().getTemp_min()-273.15)+"°";
             minima.setText(tmp);
-            tmp=""+meteo.getMain().getTemp();
+            tmp=""+(int)(meteo.getMain().getTemp()-273.15)+"°";
             attuale.setText(tmp);
+
+            ImageController.getInstance().setImage(image,place.getMeteo().getWeather()[0].getIcon());
+
+
+           // Log.i("--->",""+place.getBitmap());
             //TODO link img
         } else {
             nome.setText(place.getName());

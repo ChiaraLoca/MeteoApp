@@ -13,6 +13,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:text="nome posto"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="meteo"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_image" />
@@ -33,6 +35,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:text="numero"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_nomeL" />
 
@@ -43,13 +46,14 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:text="coordinate"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_numeroL" />
 
     <ImageView
         android:id="@+id/id_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,40 +65,79 @@
         android:id="@+id/id_attualeL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="attuale"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_meteoL"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/id_minL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="10dp"
         android:text="min"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/id_attualeL"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/id_maxL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="10dp"
         android:text="max"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/id_attualeL"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/id_backB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="Button"
+        android:textSize="18sp"
+        app:backgroundTint="#009688"
+        app:icon="@drawable/return0"
+        app:iconTint="#010101"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="minima"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_meteoL"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="attuale"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_meteoL"
+        app:layout_constraintVertical_bias="0.16000003" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="massima"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/id_meteoL"
+        app:layout_constraintVertical_bias="0.16000003" />
 </androidx.constraintlayout.widget.ConstraintLayout>

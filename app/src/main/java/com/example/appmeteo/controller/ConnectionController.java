@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.concurrent.ExecutionException;
 
 public class ConnectionController {
 
@@ -29,18 +30,27 @@ public class ConnectionController {
     {
         return send(weatherUrl.getUrlByCityNames(cityName));
     }
-    public InputStream getImageById(String imageId)
+    /*public String getImageById(String imageId)
     {
 
-        String image = send(weatherUrl.getUrlImageById(imageId));
-        return new ByteArrayInputStream(image.getBytes());
-    }
+        return send(weatherUrl.getUrlImageById(imageId));
+
+    }*/
 
 
     private String send(String urlstr)
     {
 
-        StringBuilder stringBuilder = new StringBuilder();
+       String str=null;
+        try {
+            Send send = (Send) new Send().execute(urlstr);
+            str= send.get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return str;
+
+        /*StringBuilder stringBuilder = new StringBuilder();
         HttpURLConnection connection=null;
         try {
             URL url = new URL(urlstr);
@@ -60,7 +70,7 @@ public class ConnectionController {
         } finally{
             connection.disconnect();
         }
-        return stringBuilder.toString();
+        return stringBuilder.toString();*/
     }
 
 

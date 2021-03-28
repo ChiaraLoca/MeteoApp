@@ -24,7 +24,8 @@ public class GPSController {
     private GPSController() {
     }
     public void startLocationListener(Context context) {
-        long mLocTrackingInterval = 1000 * 5; // 5 sec
+
+        long mLocTrackingInterval = 1000 * 600; // 10 minuti
         float trackingDistance = 0;
         LocationAccuracy trackingAccuracy = LocationAccuracy.HIGH;
 

@@ -1,12 +1,19 @@
 package com.example.appmeteo;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.util.Log;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import com.example.appmeteo.controller.ConnectionController;
+import com.example.appmeteo.controller.MeteoController;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.io.InputStream;
 
 import static org.junit.Assert.*;
 
@@ -22,5 +29,13 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.example.appmeteo", appContext.getPackageName());
+    }
+
+    @Test
+    public void imageTest(){
+
+
+
+        Bitmap bitmap = MeteoController.getInstance().requestImage("01d");
     }
 }

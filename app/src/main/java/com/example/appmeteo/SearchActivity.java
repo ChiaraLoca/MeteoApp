@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.appmeteo.controller.MeteoController;
+import com.example.appmeteo.model.Place;
 import com.example.appmeteo.model.PlacesHolder;
 
 import java.lang.reflect.Executable;
@@ -46,6 +47,7 @@ public class SearchActivity extends AppCompatActivity {
 
 
                 meteoController.requestMeteoByPlace(searchText.getText(), getApplicationContext());
+
 
 
                 //TODO posto non trovato

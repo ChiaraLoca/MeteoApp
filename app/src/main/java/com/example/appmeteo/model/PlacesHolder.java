@@ -1,6 +1,7 @@
 package com.example.appmeteo.model;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.location.Location;
 
 import com.example.appmeteo.controller.MeteoController;
@@ -25,11 +26,11 @@ public class PlacesHolder {
     }
     private PlacesHolder(Context context) {
         this.places = new ArrayList<>();
-        places.add(new Place(UUID.randomUUID(), null, "QUI",null));
+        places.add(new Place(UUID.randomUUID(), null, "QUI",null,null));
     }
 
-    public Place addPlace(String name, Location location, Meteo meteo){
-        Place p=new Place(UUID.randomUUID(), location, name, meteo);
+    public Place addPlace(String name, Location location, Meteo meteo, Bitmap bitmap){
+        Place p=new Place(UUID.randomUUID(), location, name, meteo,bitmap);
         places.add(p);
         return p;
     }
