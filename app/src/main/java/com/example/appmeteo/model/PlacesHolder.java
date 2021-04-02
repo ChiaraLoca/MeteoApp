@@ -16,6 +16,7 @@ public class PlacesHolder {
     private List<Place> places;
     private DbWrapper dbWrapper;
     private static PlacesHolder instance=null;
+    //Todo controllare il multithread
     private ExecutorService executorService;
     public List<Place> getPlaces() {
         return places;
