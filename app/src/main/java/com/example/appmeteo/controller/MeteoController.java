@@ -1,11 +1,8 @@
 package com.example.appmeteo.controller;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.Image;
-import android.widget.ImageView;
 
+import com.example.appmeteo.controller.connection.ConnectionController;
 import com.example.appmeteo.model.Place;
 import com.example.appmeteo.model.PlacesHolder;
 
@@ -38,10 +35,10 @@ public class MeteoController {
     }
 
     public Place requestMeteoByCoordinates(double lat,double lon, Context context){
-
         Meteo meteo = jsonToMeteo(ConnectionController.getConnectionController().getWeatherByCoordinates(lat,lon));
         PlacesHolder.get(context).getPlaces().get(0).setMeteo(meteo);
         PlacesHolder.get(context).getPlaces().get(0).setName(meteo.getName());
+
         return null;
     }
     public Meteo jsonToMeteo(String s){

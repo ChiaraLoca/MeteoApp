@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.example.appmeteo.fragments.placesList.PlaceHolder;
 import com.example.appmeteo.model.PlacesHolder;
+import com.example.appmeteo.model.meteo.Meteo;
 
 import io.nlopez.smartlocation.OnLocationUpdatedListener;
 import io.nlopez.smartlocation.SmartLocation;
@@ -42,7 +43,12 @@ public class GPSController {
                     @Override
                     public void onLocationUpdated(Location location) {
                         Log.i("GPS", "location" + location);
-                        PlacesHolder.get(context).getPlaces().get(0).setLocation(location);
+                        if(PlacesHolder.get(context).getPlaces().get(0).getLocation()==null || !PlacesHolder.get(context).getPlaces().get(0).getLocation().equals(location)){
+                            PlacesHolder.get(context).getPlaces().get(0).setLocation(location);
+                            MeteoController.getInstance().requestMeteoByCoordinates(PlacesHolder.get(context).getPlaces().get(0).getLocation().getLatitude(),PlacesHolder.get(context).getPlaces().get(0).getLocation().getLongitude(),context);
+                            TemperatureCheckController.getInstance().startCheck(context);
+                        }
+
 
                     }
                 });

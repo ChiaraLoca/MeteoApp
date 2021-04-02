@@ -1,4 +1,4 @@
-package com.example.appmeteo.controller;
+package com.example.appmeteo.controller.connection;
 
 import android.os.AsyncTask;
 

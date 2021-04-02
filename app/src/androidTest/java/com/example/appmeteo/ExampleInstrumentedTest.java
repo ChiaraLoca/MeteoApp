@@ -1,8 +1,6 @@
 package com.example.appmeteo;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.util.Log;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -10,15 +8,10 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import com.example.appmeteo.model.Place;
 import com.example.appmeteo.model.db.DbWrapper;
 
-import com.example.appmeteo.controller.ConnectionController;
-import com.example.appmeteo.controller.MeteoController;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.UUID;
-
-import java.io.InputStream;
 
 import static org.junit.Assert.*;
 
@@ -46,4 +39,5 @@ public class ExampleInstrumentedTest {
         assertEquals(before+1, dbWrapper.loadData().size());
         assertEquals(p, dbWrapper.loadData().get(dbWrapper.loadData().size()-1));
     }
+
 }

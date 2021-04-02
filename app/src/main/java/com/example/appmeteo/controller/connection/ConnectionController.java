@@ -1,15 +1,8 @@
-package com.example.appmeteo.controller;
+package com.example.appmeteo.controller.connection;
 
 import com.example.appmeteo.model.url.OpenWeatherMapUrl;
 import com.example.appmeteo.model.url.WeatherUrl;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.concurrent.ExecutionException;
 
 public class ConnectionController {
