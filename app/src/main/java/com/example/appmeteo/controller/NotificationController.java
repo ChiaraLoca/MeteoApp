@@ -7,11 +7,13 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.example.appmeteo.DetailActivity;
+import com.example.appmeteo.MainActivity;
 import com.example.appmeteo.R;
 import com.example.appmeteo.model.PlacesHolder;
 
@@ -28,14 +30,26 @@ public class NotificationController {
 
     }
     public void tempNotification(Context context,String msg, double temp){
-        //NotificationManager notificationManager= (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        NotificationManagerCompat notificationManager= NotificationManagerCompat.from(context);
+        Log.i("Temp", "NOTIFICA??");
+        NotificationManager notificationManager= (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        //NotificationManagerCompat notificationManager= NotificationManagerCompat.from(context);
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("default", "TEST_CHANNEL", NotificationManager.IMPORTANCE_DEFAULT);
+            channel.setDescription("Test Channel Description");
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        //Intent intent = new Intent(context,DetailActivity.class);
+
         NotificationCompat.Builder builder= new NotificationCompat.Builder(context, "default")
-                .setContentTitle("Temperature alert")
+                .setContentTitle(context.getResources().getString(R.string.temp_al))
                 .setContentText(""+msg+temp)
                 .setSmallIcon(R.drawable.image10d)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-        builder.setContentIntent(PendingIntent.getActivity(context, 0, DetailActivity.newIntent(context, PlacesHolder.get(context).getPlaces().get(0).getUuid()), 0));
+        builder.setContentIntent(PendingIntent.getActivity(context, 0, MainActivity.newIntent(context), 0));
+        //builder.setContentIntent(PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT));
         notificationManager.notify(0, builder.build());
+        Log.i("Temp", "NOTIFICA2??");
     }
 }

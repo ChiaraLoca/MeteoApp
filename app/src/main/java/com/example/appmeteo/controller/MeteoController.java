@@ -29,7 +29,10 @@ public class MeteoController {
 
     public Place requestMeteoByPlace(CharSequence text, Context context){
 
+
         Meteo meteo = jsonToMeteo(ConnectionController.getConnectionController().getWeatherByCityName(text.toString()));
+        if(meteo ==null)
+            return null;
         return PlacesHolder.get(context).addPlace(text.toString(), null,meteo);
 
     }

@@ -50,7 +50,12 @@ public class DetailActivity extends AppCompatActivity {
         image = findViewById(R.id.id_image);
 
         UUID uuid= (UUID) getIntent().getSerializableExtra(PLACE_UUID);
-        Place place= PlacesHolder.get(getApplicationContext()).getPlaceByUUID(uuid);
+        Place place;
+        if(uuid==null)
+            place = PlacesHolder.get(getApplicationContext()).getPlaces().get(0);
+        else
+            place = PlacesHolder.get(getApplicationContext()).getPlaceByUUID(uuid);
+
 
         if(place.equals(PlacesHolder.get(getApplicationContext()).getPlaces().get(0)))
             MeteoController.getInstance().requestMeteoByCoordinates(place.getLocation().getLatitude(),place.getLocation().getLongitude(),getApplicationContext());

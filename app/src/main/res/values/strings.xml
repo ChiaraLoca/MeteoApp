@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">AppMeteo</string>
+    <string name="temp_min">minimum</string>
+    <string name="temp_max">maximun</string>
+    <string name="temp_cur">current</string>
+    <string name="search">search</string>
+    <string name="temp_al">"Temperature alert"</string>
+    <string name="not_found">" not found"</string>
+    <string name="found">" successfully added"</string>
+    <string name="local">"Local"</string>
+    <string name="freezing_temp">"Freezing temperature: "</string>
+    <string name="scolding_temp">"Scolding temperature: "</string>
 </resources>

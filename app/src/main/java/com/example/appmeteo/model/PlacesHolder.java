@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.location.Location;
 
+import com.example.appmeteo.R;
 import com.example.appmeteo.model.db.DbWrapper;
 
 import com.example.appmeteo.controller.MeteoController;
@@ -37,7 +38,7 @@ public class PlacesHolder {
         this.places = new CopyOnWriteArrayList<>();
         this.dbWrapper= new DbWrapper(context);
         this.executorService= Executors.newSingleThreadExecutor();
-        places.add(new Place(UUID.randomUUID(), "LOCAL"));
+        places.add(new Place(UUID.randomUUID(), context.getResources().getString(R.string.local)));
     }
 
     public Place addPlace(String name, Location location, Meteo meteo){

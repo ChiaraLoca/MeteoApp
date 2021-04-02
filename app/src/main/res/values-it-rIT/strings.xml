@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AppMeteo</string>
+    <string name="temp_min">minima</string>
+    <string name="temp_max">massima</string>
+    <string name="temp_cur">attuale</string>
+    <string name="search">cerca</string>
+    <string name="temp_al">"Allarme temperatura"</string>
+    <string name="not_found">" non trovato"</string>
+    <string name="found">" aggiunto con successo"</string>
+    <string name="local">"Locale"</string>
+    <string name="freezing_temp">"Freddo estremo: "</string>
+    <string name="scolding_temp">"Caldo estremo: "</string>
+</resources>

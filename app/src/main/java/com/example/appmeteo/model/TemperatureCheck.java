@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
+import com.example.appmeteo.R;
 import com.example.appmeteo.controller.NotificationController;
 
 public class TemperatureCheck extends Worker {
@@ -21,12 +22,12 @@ public class TemperatureCheck extends Worker {
     public Result doWork() {
         Place here=PlacesHolder.get(getApplicationContext()).getPlaces().get(0);
         double temp=here.getMeteo().getMain().getTemp();
-        if(temp<3+KELVIN){
+        if(temp<30+KELVIN){
             Log.i("Temp", "FREDDO FOTTUTO");
-            NotificationController.getInstance().tempNotification(getApplicationContext(), "Freezing temperature: ", temp-KELVIN);
-        } else if(temp>30+ KELVIN){
+            NotificationController.getInstance().tempNotification(getApplicationContext(), getApplicationContext().getResources().getString(R.string.freezing_temp), temp-KELVIN);
+        } else if(temp>35+ KELVIN){
             Log.i("Temp", "CALDO FOTTUTO");
-            NotificationController.getInstance().tempNotification(getApplicationContext(), "Scolding temperature: ", temp-KELVIN);
+            NotificationController.getInstance().tempNotification(getApplicationContext(), getApplicationContext().getResources().getString(R.string.freezing_temp), temp-KELVIN);
 
         }
         return Result.success();

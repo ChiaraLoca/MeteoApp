@@ -46,17 +46,18 @@ public class SearchActivity extends AppCompatActivity {
             if(actionId==EditorInfo.IME_ACTION_DONE){
 
 
-                meteoController.requestMeteoByPlace(searchText.getText(), getApplicationContext());
+                Place place = meteoController.requestMeteoByPlace(searchText.getText(), getApplicationContext());
 
-
-
-                //TODO posto non trovato
                 InputMethodManager imm = (InputMethodManager) getApplicationContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
-                Toast toast=Toast.makeText(getApplicationContext(), searchText.getText()+" aggiunto con successo", Toast.LENGTH_LONG);
+                Toast toast;
+                if(place == null)
+                    toast=Toast.makeText(getApplicationContext(), searchText.getText()+getResources().getString(R.string.not_found), Toast.LENGTH_LONG);
+                else
+                    toast=Toast.makeText(getApplicationContext(), searchText.getText()+getResources().getString(R.string.found), Toast.LENGTH_LONG);
                 searchText.setText("");
                 toast.show();
-                //TODO è ROBA STRANA
+
                 return true;
             }
             return false;
