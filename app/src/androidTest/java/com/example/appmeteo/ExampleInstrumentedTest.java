@@ -7,11 +7,16 @@ import android.util.Log;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import com.example.appmeteo.model.Place;
+import com.example.appmeteo.model.db.DbWrapper;
+
 import com.example.appmeteo.controller.ConnectionController;
 import com.example.appmeteo.controller.MeteoController;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.util.UUID;
 
 import java.io.InputStream;
 
@@ -30,5 +35,15 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.example.appmeteo", appContext.getPackageName());
     }
-
+    @Test
+    public void dbInsertAndLoad(){
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        Place p= new Place(UUID.randomUUID(), "test");
+        DbWrapper dbWrapper= new DbWrapper(appContext);
+        long before= dbWrapper.loadData().size();
+        //assertTrue(dbWrapper.loadData().isEmpty());
+        assertTrue(dbWrapper.insert(p)>=0);
+        assertEquals(before+1, dbWrapper.loadData().size());
+        assertEquals(p, dbWrapper.loadData().get(dbWrapper.loadData().size()-1));
+    }
 }
