@@ -40,7 +40,8 @@ public class MeteoController {
     public Place requestMeteoByCoordinates(double lat,double lon, Context context){
         Meteo meteo = jsonToMeteo(ConnectionController.getConnectionController().getWeatherByCoordinates(lat,lon));
         PlacesHolder.get(context).getPlaces().get(0).setMeteo(meteo);
-        PlacesHolder.get(context).getPlaces().get(0).setName(meteo.getName());
+        if(!meteo.getName().isEmpty())
+            PlacesHolder.get(context).getPlaces().get(0).setName(meteo.getName());
 
         return null;
     }
