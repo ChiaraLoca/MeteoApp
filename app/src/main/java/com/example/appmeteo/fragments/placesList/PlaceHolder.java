@@ -32,11 +32,8 @@ public class PlaceHolder extends RecyclerView.ViewHolder implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        //TODO mettere il passaggio all'activity con il meteo della location
         Intent intent = DetailActivity.newIntent(activity, place.getUuid());
         activity.startActivity(intent);
-
-
     }
 
     public void bind(Place place){

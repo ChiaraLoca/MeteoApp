@@ -8,11 +8,6 @@ import com.example.appmeteo.model.Place;
 import java.util.UUID;
 
 public class PlaceCursorWrapper extends CursorWrapper {
-    /**
-     * Creates a cursor wrapper.
-     *
-     * @param cursor The underlying cursor to wrap.
-     */
     public PlaceCursorWrapper(Cursor cursor) {
         super(cursor);
     }

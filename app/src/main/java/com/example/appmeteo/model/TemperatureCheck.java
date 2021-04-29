@@ -23,10 +23,10 @@ public class TemperatureCheck extends Worker {
         Place here=PlacesHolder.get(getApplicationContext()).getPlaces().get(0);
         double temp=here.getMeteo().getMain().getTemp();
         if(temp<30+KELVIN){
-            Log.i("Temp", "FREDDO FOTTUTO");
+            Log.i("Temp", "FREDDO");
             NotificationController.getInstance().tempNotification(getApplicationContext(), getApplicationContext().getResources().getString(R.string.freezing_temp), temp-KELVIN);
         } else if(temp>35+ KELVIN){
-            Log.i("Temp", "CALDO FOTTUTO");
+            Log.i("Temp", "CALDO");
             NotificationController.getInstance().tempNotification(getApplicationContext(), getApplicationContext().getResources().getString(R.string.freezing_temp), temp-KELVIN);
 
         }

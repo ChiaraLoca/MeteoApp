@@ -30,26 +30,19 @@ public class NotificationController {
 
     }
     public void tempNotification(Context context,String msg, double temp){
-        Log.i("Temp", "NOTIFICA??");
         NotificationManager notificationManager= (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        //NotificationManagerCompat notificationManager= NotificationManagerCompat.from(context);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel("default", "TEST_CHANNEL", NotificationManager.IMPORTANCE_DEFAULT);
             channel.setDescription("Test Channel Description");
             notificationManager.createNotificationChannel(channel);
         }
-
-        //Intent intent = new Intent(context,DetailActivity.class);
-
         NotificationCompat.Builder builder= new NotificationCompat.Builder(context, "default")
                 .setContentTitle(context.getResources().getString(R.string.temp_al))
                 .setContentText(""+msg+temp)
                 .setSmallIcon(R.drawable.image10d)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         builder.setContentIntent(PendingIntent.getActivity(context, 0, MainActivity.newIntent(context), 0));
-        //builder.setContentIntent(PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT));
         notificationManager.notify(0, builder.build());
-        Log.i("Temp", "NOTIFICA2??");
     }
 }

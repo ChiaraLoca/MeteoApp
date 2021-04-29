@@ -48,8 +48,6 @@ public class GPSController {
                             MeteoController.getInstance().requestMeteoByCoordinates(PlacesHolder.get(context).getPlaces().get(0).getLocation().getLatitude(),PlacesHolder.get(context).getPlaces().get(0).getLocation().getLongitude(),context);
                             TemperatureCheckController.getInstance().startCheck(context);
                         }
-
-
                     }
                 });
     }
