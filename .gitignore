@@ -13,3 +13,5 @@
 /Android/.externalNativeBuild
 /Android/.cxx
 /Android/local.properties
+/Xamarin/*/bin/
+/Xamarin/*/obj/

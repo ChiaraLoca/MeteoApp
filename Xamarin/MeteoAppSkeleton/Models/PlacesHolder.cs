@@ -1,7 +1,6 @@
-﻿using Plugin.Geolocator;
+﻿using Plugin.Geolocator.Abstractions;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MeteoAppSkeleton.Models
 {
@@ -35,7 +34,7 @@ namespace MeteoAppSkeleton.Models
             places.Add(new Place(Guid.NewGuid(), "LOCAL"));
         }
 
-        public Place addPlace(String name, CrossGeolocator location, Meteo meteo)
+        public Place addPlace(String name, Position location, Meteo meteo)
         {
             Place p = new Place(Guid.NewGuid(), location, name, meteo);
             places.Add(p);

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using MeteoAppSkeleton.Models;
-using Plugin.Geolocator;
+using MeteoAppXF.Controller;
+using MeteoAppXF.Models;
 
 namespace MeteoAppSkeleton.ViewModels
 {
@@ -15,6 +16,8 @@ namespace MeteoAppSkeleton.ViewModels
             return instance;
 
         }
+
+        private DBController db;
         
         ObservableCollection<Place> _metoeList;
 
@@ -30,17 +33,17 @@ namespace MeteoAppSkeleton.ViewModels
 
         private MeteoListViewModel()
         {
+            db = DBController.get();
             Entries = new ObservableCollection<Place>();
-
-            for (var i = 0; i < 2; i++)
-            {
-                Entries.Add(new Place(Guid.NewGuid(), "Locale"+i));
-            }
+            Entries.Add(new Place(Guid.NewGuid(), "Locale"));
+            var dbEntries = db.GetItemsAsync().Result;
+            dbEntries.ForEach((p) => { Entries.Add(new Place(p)); });
         }
 
         public void add(Place p)
         {
             Entries.Add(p);
+            DBController.get().SaveItemAsync(new PlaceDBElement(p));
         }
        
     }

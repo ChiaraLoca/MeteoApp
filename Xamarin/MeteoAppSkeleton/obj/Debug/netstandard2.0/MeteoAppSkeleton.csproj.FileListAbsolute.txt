@@ -29,3 +29,19 @@ Y:\Desktop\Mobile\E0 MeteoAppXamarinFormsSkeleton\E0 MeteoAppXamarinFormsSkeleto
 Y:\Desktop\Mobile\E0 MeteoAppXamarinFormsSkeleton\E0 MeteoAppXamarinFormsSkeleton\MeteoAppSkeleton\obj\Debug\netstandard2.0\MeteoAppSkeleton.dll
 Y:\Desktop\Mobile\E0 MeteoAppXamarinFormsSkeleton\E0 MeteoAppXamarinFormsSkeleton\MeteoAppSkeleton\obj\Debug\netstandard2.0\ref\MeteoAppSkeleton.dll
 Y:\Desktop\Mobile\E0 MeteoAppXamarinFormsSkeleton\E0 MeteoAppXamarinFormsSkeleton\MeteoAppSkeleton\obj\Debug\netstandard2.0\MeteoAppSkeleton.pdb
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\bin\Debug\netstandard2.0\MeteoAppSkeleton.deps.json
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\bin\Debug\netstandard2.0\MeteoAppSkeleton.dll
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\bin\Debug\netstandard2.0\ref\MeteoAppSkeleton.dll
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\bin\Debug\netstandard2.0\MeteoAppSkeleton.pdb
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\obj\Debug\netstandard2.0\Views\AddNewLocation.xaml.g.cs
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\obj\Debug\netstandard2.0\Views\MeteoItemPage.xaml.g.cs
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\obj\Debug\netstandard2.0\Views\MeteoListPage.xaml.g.cs
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\obj\Debug\netstandard2.0\MeteoAppSkeleton.AssemblyInfoInputs.cache
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\obj\Debug\netstandard2.0\MeteoAppSkeleton.AssemblyInfo.cs
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\obj\Debug\netstandard2.0\MeteoAppSkeleton.csproj.CoreCompileInputs.cache
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\obj\Debug\netstandard2.0\MeteoAppSkeleton.dll
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\obj\Debug\netstandard2.0\ref\MeteoAppSkeleton.dll
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\obj\Debug\netstandard2.0\MeteoAppSkeleton.pdb
+C:\Users\Posa\Documents\SUPSI\2020-2021\Mobile\Progetto\Xamarin\MeteoAppSkeleton\obj\Debug\netstandard2.0\MeteoAppSkeleton.csprojAssemblyReference.cache

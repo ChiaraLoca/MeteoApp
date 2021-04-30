@@ -1,22 +1,27 @@
 ﻿using MeteoAppSkeleton.Controller;
-using Plugin.Geolocator;
+using MeteoAppXF.Models;
+using Plugin.Geolocator.Abstractions;
 using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace MeteoAppSkeleton.Models
 {
     public class Place
     {
         public Guid uuid { get; set; }
-        public CrossGeolocator location { get; set; }
+        public Position position { get; set; }
         public Meteo meteo { get; set; }
         public String name { get; set; }
 
-        public Place(Guid uuid, CrossGeolocator location, String name, Meteo meteo)
+        public Place(PlaceDBElement p)
+        {
+            this.uuid = p.uuid;
+            this.name = p.name;
+        }
+        public Place(Guid uuid, Position position, String name, Meteo meteo)
         {
             this.uuid = uuid;
-            this.location = location;
+            this.position = position;
             this.name = name;
             this.meteo = meteo;
 
