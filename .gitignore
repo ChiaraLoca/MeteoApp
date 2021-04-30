@@ -13,5 +13,10 @@
 /Android/.externalNativeBuild
 /Android/.cxx
 /Android/local.properties
-/Xamarin/*/bin/
-/Xamarin/*/obj/
+/Xamarin/.vs
+/Xamarin/MeteoAppSkeleton/bin/
+/Xamarin/MeteoAppSkeleton/obj/
+/Xamarin/MeteoAppSkeleton.Android/bin/
+/Xamarin/MeteoAppSkeleton.Android/obj/
+/Xamarin/MeteoAppSkeleton.iOS/bin/
+/Xamarin/MeteoAppSkeleton.iOS/obj/
