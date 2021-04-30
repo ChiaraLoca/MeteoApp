@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "B03SBA7BiK/HYQ6HIFKoZ52/vqHhB+sL+TrurDKOJeaQDcL5jtglCpuPsFRH0hWg/VyQxZQUU5e345m+bn0lRQ==",
+  "success": true,
+  "projectFilePath": "Y:\\Desktop\\Mobile\\Repo3\\MeteoApp\\Xamarin\\MeteoAppSkeleton.iOS\\MeteoAppSkeleton.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Chiara\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Chiara\\.nuget\\packages\\plugin.permissions\\3.0.0.12\\plugin.permissions.3.0.0.12.nupkg.sha512",
+    "C:\\Users\\Chiara\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Chiara\\.nuget\\packages\\xam.plugin.geolocator\\4.5.0.6\\xam.plugin.geolocator.4.5.0.6.nupkg.sha512",
+    "C:\\Users\\Chiara\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Users\\Chiara\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}

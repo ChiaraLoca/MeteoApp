@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MeteoAppSkeleton.Views.MeteoItemPage">
+    <ContentPage.Content>
+        <RelativeLayout x:Name="container">
+
+            <StackLayout Margin="20,0,0,0">
+                <Label HorizontalTextAlignment="Center" Text="Meteo details" FontSize="24"/>
+                <Label HorizontalTextAlignment="Center" Text="{Binding Place.name}"  FontSize="24"/>
+                <Label HorizontalTextAlignment="Center" Text="{Binding Place.uuid}" FontSize="24"/>
+                <Label HorizontalTextAlignment="Center" Text="{Binding Place.meteo.coord}" FontSize="24"/>
+                <Label HorizontalTextAlignment="Center" Text="{Binding Place.meteo.weather[0]}" FontSize="24"/>
+                <Label HorizontalTextAlignment="Center" Text="{Binding Place.meteo.main}" FontSize="24"/>
+
+            </StackLayout>
+
+
+
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>
